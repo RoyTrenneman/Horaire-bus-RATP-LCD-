@@ -1,9 +1,9 @@
 #!/bin/bash
 
-none=$(/home/pi/rer_bus/horaire.py |  awk -F"Orleans" '{print $2 }' | grep -i interrompu ) ##Serice non assuré
-min=$(/home/pi/rer_bus/horaire.py |  awk -F"Prochains" '{print $2 }' |  awk -F"," '{print $24}' | sed 's/^[ \t]*//;s/[ \t]*$//'| sed s/\"//g | sed s/\'//g | grep -o "^[0-9]\+") 
-arret=$(/home/pi/rer_bus/horaire.py |  awk -F"Prochains" '{print $2 }' |  awk -F"," '{print $24}' | sed 's/^[ \t]*//;s/[ \t]*$//'| sed s/\"//g | sed s/\'//g | grep -i arret )
-approche=$(/home/pi/rer_bus/horaire.py |  awk -F"Prochains" '{print $2 }' |  awk -F"," '{print $24}' | sed 's/^[ \t]*//;s/[ \t]*$//'| sed s/\"//g | sed s/\'//g |grep -i approche )
+none=$(./parser.py |  awk -F"Orleans" '{print $2 }' | grep -i interrompu ) ##Serice non assuré
+min=$(./parser.py |  awk -F"Prochains" '{print $2 }' |  awk -F"," '{print $24}' | sed 's/^[ \t]*//;s/[ \t]*$//'| sed s/\"//g | sed s/\'//g | grep -o "^[0-9]\+") 
+arret=$(/./parser.py |  awk -F"Prochains" '{print $2 }' |  awk -F"," '{print $24}' | sed 's/^[ \t]*//;s/[ \t]*$//'| sed s/\"//g | sed s/\'//g | grep -i arret )
+approche=$(./parser.py |  awk -F"Prochains" '{print $2 }' |  awk -F"," '{print $24}' | sed 's/^[ \t]*//;s/[ \t]*$//'| sed s/\"//g | sed s/\'//g |grep -i approche )
 if [ -n "$arret"  ]
 then
 v='200'
@@ -20,5 +20,5 @@ if [ "$v" = "" ]
 then
 exit
 else
-echo "$v" > /home/pi/Meteo/187.txt
+echo "$v" > ../187.txt
 fi
