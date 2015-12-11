@@ -10,5 +10,5 @@ Schema explicatif
 ![Alt text](./Schema.jpg)
 
 *TO DO*
-*Monitoring du traffic RERB avec alerte sur le LCD si traffic perturbé
+* Monitoring du traffic RERB avec alerte sur le LCD si traffic perturbé
 
