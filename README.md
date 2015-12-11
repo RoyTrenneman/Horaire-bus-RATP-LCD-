@@ -8,3 +8,7 @@ Le LCD qui affiche les informations est connecté sur un autre mini arduino(rece
 
 Schema explicatif
 ![Alt text](./Schema.jpg)
+
+*TO DO*
+*Monitoring du traffic RERB avec alerte sur le LCD si traffic perturbé
+
