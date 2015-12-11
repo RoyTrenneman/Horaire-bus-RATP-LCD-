@@ -40,7 +40,7 @@ delay(100);
 
 void receiveEvent(int howMany) {
 int i ;
- if(Wire.available() && (howMany == 2)){
+ if(Wire.available() && (howMany == 2)){  //int howMany means number of bytes received
   x = Wire.read();
   if (x == BUSTIME){
   msg[1] = Wire.read();
@@ -49,7 +49,7 @@ int i ;
   int i = Wire.read(); // Dump buffer
   }
  }
-  else { //loop for dumping buffer otherwize arduino will wait indefinitely
+  else { //loop for dumping buffer in case of "howmany > 2 " otherwize arduino will wait indefinitely
   while (0 < Wire.available()) {
   int i = Wire.read(); // Dump buffer
   //Serial.println("DUMPING BUFFER: ") ; //debugging only
