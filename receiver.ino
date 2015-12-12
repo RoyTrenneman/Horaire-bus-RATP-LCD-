@@ -36,11 +36,23 @@ vw_setup(2000);  // Bits per sec
 vw_set_rx_pin(2);
 vw_rx_start();       // Start the receiver PLL running
 
+//PIR Sensor Module
+pinMode(7, INPUT);
 
 }
 
 void loop()
 {
+
+//PIR
+int PIR = 7 ;
+int val = digitalRead(PIR);
+ if (val == 1) {
+   lcd.setBacklight(color);
+ }
+ else {
+   lcd.setBacklight(OFF);
+ }
 
 //////////////BUTTONS//////////////////
 
