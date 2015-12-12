@@ -14,6 +14,7 @@ Adafruit_RGBLCDShield lcd = Adafruit_RGBLCDShield();
 #define WHITE 0x7
 #define OFF 0x0
 
+char color = TEAL;
 uint8_t min[VW_MAX_MESSAGE_LEN] ;
 unsigned char old;
 
@@ -59,7 +60,7 @@ int val = digitalRead(PIR);
 uint8_t buttons = lcd.readButtons();
   if (buttons) {
     if (buttons & BUTTON_UP) {
-      lcd.setBacklight(TEAL);
+      lcd.setBacklight(color);
     }
     if (buttons & BUTTON_DOWN) {
       lcd.setBacklight(OFF);
